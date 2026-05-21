@@ -53,7 +53,7 @@ export default function LoginPage() {
       <div className="w-full max-w-md bg-zinc-900 border border-zinc-800 rounded-3xl p-8">
 
         <h1 className="text-4xl font-bold mb-2">
-          Connexion
+            TEST AUTH
         </h1>
 
         <p className="text-zinc-400 mb-8">

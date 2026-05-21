@@ -20,13 +20,27 @@ export default function Home() {
   const [depenses, setDepenses] =
     useState<any[]>([]);
 
-  useEffect(() => {
+useEffect(() => {
 
-    chargerInterventions();
+  verifierUtilisateur();
 
-    chargerDepenses();
+  chargerInterventions();
 
-  }, []);
+  chargerDepenses();
+
+}, []);
+
+const verifierUtilisateur = async () => {
+
+  const {
+    data: { user },
+  } = await supabase.auth.getUser();
+
+  if (!user) {
+
+    window.location.href = "/login";
+  }
+};
 
   const chargerInterventions = async () => {
 
